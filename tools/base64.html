@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Base64 Encoder / Decoder — ToolHub</title>
+    <meta
+      name="description"
+      content="Base64 Encoder / Decoder: encode or decode Base64 strings instantly in your browser. Fast, client-side, SEO-optimised."
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">ToolHub</a>
+        <nav class="nav">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a class="active" href="/tools/base64.html">Base64</a>
+        </nav>
+        <form class="global-search" data-search-form>
+          <label class="sr-only" for="global-search">Search tools</label>
+          <input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search tools..."
+            autocomplete="off"
+            list="tool-list"
+          />
+          <datalist id="tool-list">
+            <option value="Subnet Calculator"></option>
+            <option value="JSON Formatter"></option>
+            <option value="Base64 Encoder / Decoder"></option>
+          </datalist>
+        </form>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="tool-hero">
+        <div>
+          <h1>Base64 Encoder / Decoder</h1>
+          <p class="lead">
+            Convert text to Base64 or decode Base64 back to text instantly.
+          </p>
+        </div>
+        <aside class="ad ad-banner" aria-label="Advertisement">
+          <div class="ad-label">Ad</div>
+          <div class="ad-body">Top banner placeholder</div>
+        </aside>
+      </section>
+
+      <section class="tool-panel">
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="base64-input">Input</label>
+            <textarea
+              id="base64-input"
+              rows="6"
+              placeholder="Paste text or Base64..."
+            ></textarea>
+          </div>
+          <div class="input-group">
+            <label for="base64-mode">Mode</label>
+            <select id="base64-mode">
+              <option value="encode">Encode to Base64</option>
+              <option value="decode">Decode from Base64</option>
+            </select>
+          </div>
+        </div>
+        <div class="validation" data-validation></div>
+      </section>
+
+      <section class="tool-results">
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Result</h2>
+            <button class="copy-btn" data-copy-target="result">Copy</button>
+          </div>
+          <pre class="result-pre" data-result="result">—</pre>
+        </article>
+      </section>
+
+      <section class="ad ad-mid" aria-label="Advertisement">
+        <div class="ad-label">Ad</div>
+        <div class="ad-body">Mid-content placeholder</div>
+      </section>
+
+      <section class="content-slab">
+        <article class="content-block">
+          <h2>What is Base64?</h2>
+          <p>
+            Base64 is a way to encode binary data as plain text. It is commonly
+            used to embed images, tokens, or binary payloads in text-based
+            formats like JSON or HTML.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>How it works</h2>
+          <p>
+            ToolHub encodes plain text to Base64 and decodes Base64 back to
+            UTF-8 text using browser APIs. Validation is shown if the input is
+            not valid Base64.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>Example</h2>
+          <p>
+            Text <strong>Hello</strong> becomes <strong>SGVsbG8=</strong> when
+            encoded, and decodes back to the original text.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <aside class="ad ad-sidebar" aria-label="Advertisement">
+      <div class="ad-label">Ad</div>
+      <div class="ad-body">Sidebar placeholder</div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ToolHub — fast, clean, and useful developer tools.</p>
+        <div class="footer-links">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/base64.js" defer></script>
+  </body>
+</html>

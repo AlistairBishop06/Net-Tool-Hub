@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subnet Calculator — ToolHub</title>
+    <meta
+      name="description"
+      content="Subnet Calculator: instantly compute network address, broadcast, usable hosts, and IP range from an IP and CIDR. Fast, client-side, SEO-optimised."
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">ToolHub</a>
+        <nav class="nav">
+          <a class="active" href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </nav>
+        <form class="global-search" data-search-form>
+          <label class="sr-only" for="global-search">Search tools</label>
+          <input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search tools..."
+            autocomplete="off"
+            list="tool-list"
+          />
+          <datalist id="tool-list">
+            <option value="Subnet Calculator"></option>
+            <option value="JSON Formatter"></option>
+            <option value="Base64 Encoder / Decoder"></option>
+          </datalist>
+        </form>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="tool-hero">
+        <div>
+          <h1>Subnet Calculator</h1>
+          <p class="lead">
+            Convert an IP address and CIDR into network details instantly.
+          </p>
+        </div>
+        <aside class="ad ad-banner" aria-label="Advertisement">
+          <div class="ad-label">Ad</div>
+          <div class="ad-body">Top banner placeholder</div>
+        </aside>
+      </section>
+
+      <section class="tool-panel">
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="ip-input">IP address</label>
+            <input id="ip-input" type="text" placeholder="e.g. 192.168.1.10" />
+          </div>
+          <div class="input-group">
+            <label for="cidr-input">CIDR</label>
+            <input id="cidr-input" type="number" min="0" max="32" placeholder="e.g. 24" />
+          </div>
+        </div>
+        <div class="validation" data-validation></div>
+      </section>
+
+      <section class="tool-results">
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Network Address</h2>
+            <button class="copy-btn" data-copy-target="network">Copy</button>
+          </div>
+          <div class="result-value" data-result="network">—</div>
+        </article>
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Broadcast Address</h2>
+            <button class="copy-btn" data-copy-target="broadcast">Copy</button>
+          </div>
+          <div class="result-value" data-result="broadcast">—</div>
+        </article>
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Usable Host Range</h2>
+            <button class="copy-btn" data-copy-target="range">Copy</button>
+          </div>
+          <div class="result-value" data-result="range">—</div>
+        </article>
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Usable Hosts</h2>
+            <button class="copy-btn" data-copy-target="hosts">Copy</button>
+          </div>
+          <div class="result-value" data-result="hosts">—</div>
+        </article>
+      </section>
+
+      <section class="ad ad-mid" aria-label="Advertisement">
+        <div class="ad-label">Ad</div>
+        <div class="ad-body">Mid-content placeholder</div>
+      </section>
+
+      <section class="content-slab">
+        <article class="content-block">
+          <h2>What is a subnet calculator?</h2>
+          <p>
+            A subnet calculator takes an IP address and a CIDR prefix length,
+            then computes the network address, broadcast address, usable host
+            range, and the number of usable hosts in that subnet.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>How it works</h2>
+          <p>
+            The CIDR prefix defines how many bits are allocated to the network.
+            ToolHub calculates the subnet mask, applies it to the IP, and then
+            derives the broadcast address and host range from the remaining
+            host bits.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>Example</h2>
+          <p>
+            For <strong>192.168.1.10/24</strong>, the network is
+            <strong>192.168.1.0</strong>, the broadcast is
+            <strong>192.168.1.255</strong>, and the usable range is
+            <strong>192.168.1.1–192.168.1.254</strong>.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <aside class="ad ad-sidebar" aria-label="Advertisement">
+      <div class="ad-label">Ad</div>
+      <div class="ad-body">Sidebar placeholder</div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ToolHub — fast, clean, and useful developer tools.</p>
+        <div class="footer-links">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/subnet.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JSON Formatter + Validator — ToolHub</title>
+    <meta
+      name="description"
+      content="JSON Formatter + Validator: instantly prettify, validate, and minify JSON in your browser. Fast, client-side, SEO-optimised."
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">ToolHub</a>
+        <nav class="nav">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a class="active" href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </nav>
+        <form class="global-search" data-search-form>
+          <label class="sr-only" for="global-search">Search tools</label>
+          <input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search tools..."
+            autocomplete="off"
+            list="tool-list"
+          />
+          <datalist id="tool-list">
+            <option value="Subnet Calculator"></option>
+            <option value="JSON Formatter"></option>
+            <option value="Base64 Encoder / Decoder"></option>
+          </datalist>
+        </form>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="tool-hero">
+        <div>
+          <h1>JSON Formatter + Validator</h1>
+          <p class="lead">
+            Paste JSON and get instant validation plus formatted output.
+          </p>
+        </div>
+        <aside class="ad ad-banner" aria-label="Advertisement">
+          <div class="ad-label">Ad</div>
+          <div class="ad-body">Top banner placeholder</div>
+        </aside>
+      </section>
+
+      <section class="tool-panel">
+        <div class="input-group">
+          <label for="json-input">JSON input</label>
+          <textarea
+            id="json-input"
+            rows="10"
+            placeholder='e.g. {"name":"ToolHub","status":"fast"}'
+          ></textarea>
+        </div>
+        <div class="action-row">
+          <button class="ghost-btn" data-action="format">Format</button>
+          <button class="ghost-btn" data-action="minify">Minify</button>
+          <button class="ghost-btn" data-action="clear">Clear</button>
+        </div>
+        <div class="validation" data-validation></div>
+      </section>
+
+      <section class="tool-results">
+        <article class="result-card">
+          <div class="result-header">
+            <h2>Formatted Output</h2>
+            <button class="copy-btn" data-copy-target="formatted">Copy</button>
+          </div>
+          <pre class="result-pre" data-result="formatted">—</pre>
+        </article>
+      </section>
+
+      <section class="ad ad-mid" aria-label="Advertisement">
+        <div class="ad-label">Ad</div>
+        <div class="ad-body">Mid-content placeholder</div>
+      </section>
+
+      <section class="content-slab">
+        <article class="content-block">
+          <h2>What is a JSON formatter?</h2>
+          <p>
+            A JSON formatter makes raw JSON easy to read by adding indentation
+            and line breaks. A validator checks whether the JSON is syntactically
+            correct before you use it in your app or API.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>How it works</h2>
+          <p>
+            ToolHub parses the input in your browser. If the JSON is valid, it
+            outputs a pretty-printed version or a minified version without
+            extra whitespace. If not, the error location is shown.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>Example</h2>
+          <p>
+            Input: <strong>{"name":"ToolHub","speed":"fast"}</strong> becomes
+            a multi-line, indented JSON object for easy inspection.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <aside class="ad ad-sidebar" aria-label="Advertisement">
+      <div class="ad-label">Ad</div>
+      <div class="ad-body">Sidebar placeholder</div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ToolHub — fast, clean, and useful developer tools.</p>
+        <div class="footer-links">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/json.js" defer></script>
+  </body>
+</html>

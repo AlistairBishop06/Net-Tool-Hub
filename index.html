@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ToolHub — Fast Developer Tools (Subnet, JSON, Base64)</title>
+    <meta
+      name="description"
+      content="ToolHub is a high-performance suite of free developer tools: Subnet Calculator, JSON Formatter/Validator, and Base64 Encoder/Decoder. Fast, client-side, and SEO-optimised."
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">ToolHub</a>
+        <nav class="nav">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </nav>
+        <form class="global-search" data-search-form>
+          <label class="sr-only" for="global-search">Search tools</label>
+          <input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search tools..."
+            autocomplete="off"
+            list="tool-list"
+          />
+          <datalist id="tool-list">
+            <option value="Subnet Calculator"></option>
+            <option value="JSON Formatter"></option>
+            <option value="Base64 Encoder / Decoder"></option>
+          </datalist>
+        </form>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <h1>ToolHub: fast, simple developer tools</h1>
+          <p class="lead">
+            A growing suite of high-performance, client-side tools built for
+            speed and clarity. Instant results, clean UI, and zero clutter.
+          </p>
+          <form class="hero-search" data-home-search>
+            <label class="sr-only" for="home-search">Search tools</label>
+            <input
+              id="home-search"
+              type="search"
+              placeholder="Search tools by name..."
+              autocomplete="off"
+            />
+          </form>
+        </div>
+        <aside class="ad ad-banner" aria-label="Advertisement">
+          <div class="ad-label">Ad</div>
+          <div class="ad-body">Top banner placeholder</div>
+        </aside>
+      </section>
+
+      <section class="tools-grid" aria-label="Available tools">
+        <article class="tool-card" data-tool data-title="Subnet Calculator">
+          <h2><a href="/tools/subnet.html">Subnet Calculator</a></h2>
+          <p>Calculate network, broadcast, host range, and usable hosts.</p>
+          <div class="tool-meta">
+            <span>Networking</span>
+            <a class="tool-link" href="/tools/subnet.html">Open</a>
+          </div>
+        </article>
+        <article class="tool-card" data-tool data-title="JSON Formatter">
+          <h2><a href="/tools/json.html">JSON Formatter + Validator</a></h2>
+          <p>Format, validate, and minify JSON instantly in the browser.</p>
+          <div class="tool-meta">
+            <span>Data</span>
+            <a class="tool-link" href="/tools/json.html">Open</a>
+          </div>
+        </article>
+        <article class="tool-card" data-tool data-title="Base64 Encoder">
+          <h2><a href="/tools/base64.html">Base64 Encoder / Decoder</a></h2>
+          <p>Encode or decode Base64 strings with instant validation.</p>
+          <div class="tool-meta">
+            <span>Encoding</span>
+            <a class="tool-link" href="/tools/base64.html">Open</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-slab">
+        <article class="content-block">
+          <h2>Why ToolHub?</h2>
+          <p>
+            ToolHub is designed for clarity and speed. Every tool runs fully
+            client-side, so nothing ever leaves your browser. The UI is built
+            to be understood in seconds, with live results and instant copy
+            buttons.
+          </p>
+        </article>
+        <article class="content-block">
+          <h2>Built for scale</h2>
+          <p>
+            This suite is intentionally modular, making it easy to add dozens
+            of new tools without slowing down the site or the user.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>ToolHub — fast, clean, and useful developer tools.</p>
+        <div class="footer-links">
+          <a href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/json.html">JSON Formatter</a>
+          <a href="/tools/base64.html">Base64</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/js/home.js" defer></script>
+  </body>
+</html>
