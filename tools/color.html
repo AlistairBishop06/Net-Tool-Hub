@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>URL Encoder / Decoder — ToolHub</title>
+    <title>Colour Converter + Picker — ToolHub</title>
     <meta
       name="description"
-      content="URL Encoder / Decoder: encode or decode URLs instantly in your browser. Fast, client-side, SEO-optimised."
+      content="Colour Converter + Picker: convert HEX, RGB, HSL, and HSV with a live preview. Copy values instantly. Fast, client-side, SEO-optimised."
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -48,11 +48,11 @@
             <a href="/tools/base64.html">Base64 Encoder / Decoder</a>
             <a href="/tools/password.html">Password Generator</a>
             <a href="/tools/hash.html">Hash Generator</a>
-            <a class="active" href="/tools/url.html">URL Encoder / Decoder</a>
+            <a href="/tools/url.html">URL Encoder / Decoder</a>
             <a href="/tools/timestamp.html">Timestamp Converter</a>
             <a href="/tools/uuid.html">UUID Generator</a>
             <a href="/tools/qr.html">QR Code Generator</a>
-            <a href="/tools/color.html">Colour Converter + Picker</a>
+            <a class="active" href="/tools/color.html">Colour Converter + Picker</a>
             <a href="/tools/case.html">Text Case Converter</a>
             <a href="/tools/counter.html">Word & Character Counter</a>
             <a href="/tools/random.html">Random Generator Suite</a>
@@ -64,9 +64,9 @@
     <main class="container">
       <section class="tool-hero">
         <div>
-          <h1>URL Encoder / Decoder</h1>
+          <h1>Colour Converter + Picker</h1>
           <p class="lead">
-            Encode or decode URLs and see the differences instantly.
+            Convert HEX, RGB, HSL, and HSV values with a live preview.
           </p>
         </div>
         <aside class="ad ad-banner" aria-label="Advertisement">
@@ -78,16 +78,39 @@
       <section class="tool-panel">
         <div class="input-grid">
           <div class="input-group">
-            <label for="url-input">Input</label>
-            <textarea id="url-input" rows="6" placeholder="Enter URL..."></textarea>
+            <label for="hex-input">HEX</label>
+            <input id="hex-input" type="text" placeholder="#4dd2ff" />
           </div>
           <div class="input-group">
-            <label for="url-mode">Mode</label>
-            <select id="url-mode">
-              <option value="encode">Encode URL</option>
-              <option value="decode">Decode URL</option>
-            </select>
+            <label for="rgb-input">RGB</label>
+            <input id="rgb-input" type="text" placeholder="77, 210, 255" />
           </div>
+        </div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="hsl-input">HSL</label>
+            <input id="hsl-input" type="text" placeholder="192, 100%, 65%" />
+          </div>
+          <div class="input-group">
+            <label for="hsv-input">HSV</label>
+            <input id="hsv-input" type="text" placeholder="192, 70%, 100%" />
+          </div>
+        </div>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="color-picker">Pick a colour</label>
+            <input id="color-picker" type="color" value="#4dd2ff" />
+          </div>
+          <div class="input-group">
+            <label>Preview</label>
+            <div class="preview-box" id="color-preview"></div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="ghost-btn" data-copy-target="hex">Copy HEX</button>
+          <button class="ghost-btn" data-copy-target="rgb">Copy RGB</button>
+          <button class="ghost-btn" data-copy-target="hsl">Copy HSL</button>
+          <button class="ghost-btn" data-copy-target="hsv">Copy HSV</button>
         </div>
         <div class="validation" data-validation></div>
       </section>
@@ -95,17 +118,14 @@
       <section class="tool-results">
         <article class="result-card">
           <div class="result-header">
-            <h2>Result</h2>
-            <button class="copy-btn" data-copy-target="result">Copy</button>
+            <h2>Converted Values</h2>
           </div>
-          <pre class="result-pre" data-result="result">—</pre>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Difference Preview</h2>
-            <button class="copy-btn" data-copy-target="diff">Copy</button>
+          <div class="pill-row">
+            <span class="pill" data-result="hex">HEX: —</span>
+            <span class="pill" data-result="rgb">RGB: —</span>
+            <span class="pill" data-result="hsl">HSL: —</span>
+            <span class="pill" data-result="hsv">HSV: —</span>
           </div>
-          <pre class="result-pre" data-result="diff">—</pre>
         </article>
       </section>
 
@@ -116,25 +136,26 @@
 
       <section class="content-slab">
         <article class="content-block">
-          <h2>What is URL encoding?</h2>
+          <h2>What is a colour converter?</h2>
           <p>
-            URL encoding replaces special characters with safe equivalents so
-            they can be transmitted in query strings or links without breaking
-            the URL.
+            A colour converter helps you translate colours between HEX, RGB,
+            HSL, and HSV formats. This is essential for design systems and
+            frontend styling work.
           </p>
         </article>
         <article class="content-block">
           <h2>How it works</h2>
           <p>
-            ToolHub uses built-in browser encoding to transform URLs. You can
-            instantly switch between encoded and decoded forms.
+            ToolHub parses your input, converts it across popular colour
+            models, and updates the preview instantly in your browser.
           </p>
         </article>
         <article class="content-block">
           <h2>Example</h2>
           <p>
-            Text <strong>hello world</strong> becomes
-            <strong>hello%20world</strong> when encoded.
+            HEX <strong>#4dd2ff</strong> converts to
+            <strong>rgb(77, 210, 255)</strong> and HSL
+            <strong>192, 100%, 65%</strong>.
           </p>
         </article>
       </section>
@@ -167,6 +188,6 @@
     </footer>
 
     <script src="/js/common.js" defer></script>
-    <script src="/js/url.js" defer></script>
+    <script src="/js/color.js" defer></script>
   </body>
 </html>

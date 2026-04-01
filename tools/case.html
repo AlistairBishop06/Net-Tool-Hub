@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>URL Encoder / Decoder — ToolHub</title>
+    <title>Text Case Converter — ToolHub</title>
     <meta
       name="description"
-      content="URL Encoder / Decoder: encode or decode URLs instantly in your browser. Fast, client-side, SEO-optimised."
+      content="Text Case Converter: transform text to lowercase, uppercase, title case, camelCase, snake_case, and more. Fast, client-side, SEO-optimised."
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -48,12 +48,12 @@
             <a href="/tools/base64.html">Base64 Encoder / Decoder</a>
             <a href="/tools/password.html">Password Generator</a>
             <a href="/tools/hash.html">Hash Generator</a>
-            <a class="active" href="/tools/url.html">URL Encoder / Decoder</a>
+            <a href="/tools/url.html">URL Encoder / Decoder</a>
             <a href="/tools/timestamp.html">Timestamp Converter</a>
             <a href="/tools/uuid.html">UUID Generator</a>
             <a href="/tools/qr.html">QR Code Generator</a>
             <a href="/tools/color.html">Colour Converter + Picker</a>
-            <a href="/tools/case.html">Text Case Converter</a>
+            <a class="active" href="/tools/case.html">Text Case Converter</a>
             <a href="/tools/counter.html">Word & Character Counter</a>
             <a href="/tools/random.html">Random Generator Suite</a>
           </div>
@@ -64,9 +64,9 @@
     <main class="container">
       <section class="tool-hero">
         <div>
-          <h1>URL Encoder / Decoder</h1>
+          <h1>Text Case Converter</h1>
           <p class="lead">
-            Encode or decode URLs and see the differences instantly.
+            Convert text to lowercase, UPPERCASE, Title Case, camelCase, and more.
           </p>
         </div>
         <aside class="ad ad-banner" aria-label="Advertisement">
@@ -76,18 +76,16 @@
       </section>
 
       <section class="tool-panel">
-        <div class="input-grid">
-          <div class="input-group">
-            <label for="url-input">Input</label>
-            <textarea id="url-input" rows="6" placeholder="Enter URL..."></textarea>
-          </div>
-          <div class="input-group">
-            <label for="url-mode">Mode</label>
-            <select id="url-mode">
-              <option value="encode">Encode URL</option>
-              <option value="decode">Decode URL</option>
-            </select>
-          </div>
+        <div class="input-group">
+          <label for="case-input">Input text</label>
+          <textarea id="case-input" rows="8" placeholder="Paste text here..."></textarea>
+        </div>
+        <div class="action-row">
+          <button class="ghost-btn" data-action="lower">lowercase</button>
+          <button class="ghost-btn" data-action="upper">UPPERCASE</button>
+          <button class="ghost-btn" data-action="title">Title Case</button>
+          <button class="ghost-btn" data-action="camel">camelCase</button>
+          <button class="ghost-btn" data-action="snake">snake_case</button>
         </div>
         <div class="validation" data-validation></div>
       </section>
@@ -95,17 +93,10 @@
       <section class="tool-results">
         <article class="result-card">
           <div class="result-header">
-            <h2>Result</h2>
-            <button class="copy-btn" data-copy-target="result">Copy</button>
+            <h2>Converted Output</h2>
+            <button class="copy-btn" data-copy-target="case">Copy</button>
           </div>
-          <pre class="result-pre" data-result="result">—</pre>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Difference Preview</h2>
-            <button class="copy-btn" data-copy-target="diff">Copy</button>
-          </div>
-          <pre class="result-pre" data-result="diff">—</pre>
+          <pre class="result-pre" data-result="case">—</pre>
         </article>
       </section>
 
@@ -116,25 +107,24 @@
 
       <section class="content-slab">
         <article class="content-block">
-          <h2>What is URL encoding?</h2>
+          <h2>What is a text case converter?</h2>
           <p>
-            URL encoding replaces special characters with safe equivalents so
-            they can be transmitted in query strings or links without breaking
-            the URL.
+            A text case converter changes the capitalization and formatting of
+            text to match different writing or coding styles.
           </p>
         </article>
         <article class="content-block">
           <h2>How it works</h2>
           <p>
-            ToolHub uses built-in browser encoding to transform URLs. You can
-            instantly switch between encoded and decoded forms.
+            ToolHub transforms your input instantly in the browser so you can
+            copy the converted text with one click.
           </p>
         </article>
         <article class="content-block">
           <h2>Example</h2>
           <p>
             Text <strong>hello world</strong> becomes
-            <strong>hello%20world</strong> when encoded.
+            <strong>Hello World</strong> in Title Case.
           </p>
         </article>
       </section>
@@ -167,6 +157,6 @@
     </footer>
 
     <script src="/js/common.js" defer></script>
-    <script src="/js/url.js" defer></script>
+    <script src="/js/case.js" defer></script>
   </body>
 </html>

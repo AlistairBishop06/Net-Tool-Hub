@@ -7,6 +7,11 @@ const toolRoutes = [
   { name: "URL Encoder / Decoder", path: "/tools/url.html", keywords: ["url", "encode", "decode"] },
   { name: "Timestamp Converter", path: "/tools/timestamp.html", keywords: ["timestamp", "unix", "date", "time"] },
   { name: "UUID Generator", path: "/tools/uuid.html", keywords: ["uuid", "guid", "v4"] },
+  { name: "QR Code Generator", path: "/tools/qr.html", keywords: ["qr", "code", "qr code"] },
+  { name: "Colour Converter + Picker", path: "/tools/color.html", keywords: ["color", "colour", "hex", "rgb", "hsl", "hsv"] },
+  { name: "Text Case Converter", path: "/tools/case.html", keywords: ["case", "uppercase", "lowercase", "title", "camel", "snake"] },
+  { name: "Word & Character Counter", path: "/tools/counter.html", keywords: ["word", "character", "counter", "reading time"] },
+  { name: "Random Generator Suite", path: "/tools/random.html", keywords: ["random", "number", "name", "password"] },
 ];
 
 const normalize = (value) => value.toLowerCase().trim();
