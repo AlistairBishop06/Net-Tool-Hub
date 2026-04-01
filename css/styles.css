@@ -419,6 +419,7 @@ img {
   border-radius: var(--radius);
   padding: 1rem;
   color: var(--muted);
+  min-height: 90px;
 }
 
 .ad-banner {
@@ -431,11 +432,9 @@ img {
 }
 
 .ad-sidebar {
-  position: fixed;
-  right: 2vw;
-  top: 35vh;
-  width: 180px;
-  display: none;
+  position: static;
+  width: min(320px, 92vw);
+  margin: 1rem auto 2rem;
   background: rgba(26, 35, 48, 0.7);
 }
 
@@ -499,7 +498,7 @@ img {
   }
 
   .ad-sidebar {
-    display: block;
+    margin: 0 auto 2rem;
   }
 }
 
