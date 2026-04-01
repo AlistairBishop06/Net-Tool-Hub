@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Subnet Calculator — ToolHub</title>
+    <title>Hash Generator (MD5, SHA-1, SHA-256) — ToolHub</title>
     <meta
       name="description"
-      content="Subnet Calculator: instantly compute network address, broadcast, usable hosts, and IP range from an IP and CIDR. Fast, client-side, SEO-optimised."
+      content="Generate hashes from text input: MD5, SHA-1, and SHA-256. Fast, client-side, SEO-optimised."
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -15,11 +15,11 @@
       <div class="container header-inner">
         <a class="logo" href="/">ToolHub</a>
         <nav class="nav">
-          <a class="active" href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/subnet.html">Subnet Calculator</a>
           <a href="/tools/json.html">JSON Formatter</a>
           <a href="/tools/base64.html">Base64</a>
           <a href="/tools/password.html">Password Generator</a>
-          <a href="/tools/hash.html">Hash Generator</a>
+          <a class="active" href="/tools/hash.html">Hash Generator</a>
           <a href="/tools/url.html">URL Encoder</a>
           <a href="/tools/timestamp.html">Timestamp</a>
           <a href="/tools/uuid.html">UUID Generator</a>
@@ -51,9 +51,9 @@
     <main class="container">
       <section class="tool-hero">
         <div>
-          <h1>Subnet Calculator</h1>
+          <h1>Hash Generator (MD5, SHA-1, SHA-256)</h1>
           <p class="lead">
-            Convert an IP address and CIDR into network details instantly.
+            Generate cryptographic hashes for any text input in your browser.
           </p>
         </div>
         <aside class="ad ad-banner" aria-label="Advertisement">
@@ -63,15 +63,9 @@
       </section>
 
       <section class="tool-panel">
-        <div class="input-grid">
-          <div class="input-group">
-            <label for="ip-input">IP address</label>
-            <input id="ip-input" type="text" placeholder="e.g. 192.168.1.10" />
-          </div>
-          <div class="input-group">
-            <label for="cidr-input">CIDR</label>
-            <input id="cidr-input" type="number" min="0" max="32" placeholder="e.g. 24" />
-          </div>
+        <div class="input-group">
+          <label for="hash-input">Input text</label>
+          <textarea id="hash-input" rows="6" placeholder="Enter text..."></textarea>
         </div>
         <div class="validation" data-validation></div>
       </section>
@@ -79,31 +73,24 @@
       <section class="tool-results">
         <article class="result-card">
           <div class="result-header">
-            <h2>Network Address</h2>
-            <button class="copy-btn" data-copy-target="network">Copy</button>
+            <h2>MD5</h2>
+            <button class="copy-btn" data-copy-target="md5">Copy</button>
           </div>
-          <div class="result-value" data-result="network">—</div>
+          <pre class="result-pre" data-result="md5">—</pre>
         </article>
         <article class="result-card">
           <div class="result-header">
-            <h2>Broadcast Address</h2>
-            <button class="copy-btn" data-copy-target="broadcast">Copy</button>
+            <h2>SHA-1</h2>
+            <button class="copy-btn" data-copy-target="sha1">Copy</button>
           </div>
-          <div class="result-value" data-result="broadcast">—</div>
+          <pre class="result-pre" data-result="sha1">—</pre>
         </article>
         <article class="result-card">
           <div class="result-header">
-            <h2>Usable Host Range</h2>
-            <button class="copy-btn" data-copy-target="range">Copy</button>
+            <h2>SHA-256</h2>
+            <button class="copy-btn" data-copy-target="sha256">Copy</button>
           </div>
-          <div class="result-value" data-result="range">—</div>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Usable Hosts</h2>
-            <button class="copy-btn" data-copy-target="hosts">Copy</button>
-          </div>
-          <div class="result-value" data-result="hosts">—</div>
+          <pre class="result-pre" data-result="sha256">—</pre>
         </article>
       </section>
 
@@ -114,29 +101,26 @@
 
       <section class="content-slab">
         <article class="content-block">
-          <h2>What is a subnet calculator?</h2>
+          <h2>What is a hash generator?</h2>
           <p>
-            A subnet calculator takes an IP address and a CIDR prefix length,
-            then computes the network address, broadcast address, usable host
-            range, and the number of usable hosts in that subnet.
+            A hash generator converts input data into a fixed-length string.
+            Hashes are used for checksums, fingerprinting files, and verifying
+            data integrity.
           </p>
         </article>
         <article class="content-block">
           <h2>How it works</h2>
           <p>
-            The CIDR prefix defines how many bits are allocated to the network.
-            ToolHub calculates the subnet mask, applies it to the IP, and then
-            derives the broadcast address and host range from the remaining
-            host bits.
+            ToolHub uses browser cryptography APIs to compute SHA-1 and SHA-256
+            hashes instantly. MD5 is computed locally for compatibility with
+            legacy systems.
           </p>
         </article>
         <article class="content-block">
           <h2>Example</h2>
           <p>
-            For <strong>192.168.1.10/24</strong>, the network is
-            <strong>192.168.1.0</strong>, the broadcast is
-            <strong>192.168.1.255</strong>, and the usable range is
-            <strong>192.168.1.1–192.168.1.254</strong>.
+            Input <strong>hello</strong> yields MD5
+            <strong>5d41402abc4b2a76b9719d911017c592</strong>.
           </p>
         </article>
       </section>
@@ -164,6 +148,6 @@
     </footer>
 
     <script src="/js/common.js" defer></script>
-    <script src="/js/subnet.js" defer></script>
+    <script src="/js/hash.js" defer></script>
   </body>
 </html>

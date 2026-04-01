@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Subnet Calculator — ToolHub</title>
+    <title>Timestamp Converter — ToolHub</title>
     <meta
       name="description"
-      content="Subnet Calculator: instantly compute network address, broadcast, usable hosts, and IP range from an IP and CIDR. Fast, client-side, SEO-optimised."
+      content="Timestamp Converter: convert Unix timestamps to human-readable dates and back. Supports multiple timezones. Fast, client-side, SEO-optimised."
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -15,13 +15,13 @@
       <div class="container header-inner">
         <a class="logo" href="/">ToolHub</a>
         <nav class="nav">
-          <a class="active" href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/subnet.html">Subnet Calculator</a>
           <a href="/tools/json.html">JSON Formatter</a>
           <a href="/tools/base64.html">Base64</a>
           <a href="/tools/password.html">Password Generator</a>
           <a href="/tools/hash.html">Hash Generator</a>
           <a href="/tools/url.html">URL Encoder</a>
-          <a href="/tools/timestamp.html">Timestamp</a>
+          <a class="active" href="/tools/timestamp.html">Timestamp</a>
           <a href="/tools/uuid.html">UUID Generator</a>
         </nav>
         <form class="global-search" data-search-form>
@@ -51,9 +51,10 @@
     <main class="container">
       <section class="tool-hero">
         <div>
-          <h1>Subnet Calculator</h1>
+          <h1>Timestamp Converter</h1>
           <p class="lead">
-            Convert an IP address and CIDR into network details instantly.
+            Convert Unix timestamps to readable dates and back, with timezone
+            support.
           </p>
         </div>
         <aside class="ad ad-banner" aria-label="Advertisement">
@@ -65,13 +66,24 @@
       <section class="tool-panel">
         <div class="input-grid">
           <div class="input-group">
-            <label for="ip-input">IP address</label>
-            <input id="ip-input" type="text" placeholder="e.g. 192.168.1.10" />
+            <label for="timestamp-input">Unix timestamp (seconds)</label>
+            <input id="timestamp-input" type="number" placeholder="e.g. 1711640000" />
           </div>
           <div class="input-group">
-            <label for="cidr-input">CIDR</label>
-            <input id="cidr-input" type="number" min="0" max="32" placeholder="e.g. 24" />
+            <label for="date-input">Date & time (local)</label>
+            <input id="date-input" type="datetime-local" />
           </div>
+        </div>
+        <div class="input-group">
+          <label for="timezone-select">Timezone</label>
+          <select id="timezone-select">
+            <option value="local">Local time</option>
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">America/New_York</option>
+            <option value="Europe/London">Europe/London</option>
+            <option value="Asia/Tokyo">Asia/Tokyo</option>
+            <option value="Australia/Sydney">Australia/Sydney</option>
+          </select>
         </div>
         <div class="validation" data-validation></div>
       </section>
@@ -79,31 +91,17 @@
       <section class="tool-results">
         <article class="result-card">
           <div class="result-header">
-            <h2>Network Address</h2>
-            <button class="copy-btn" data-copy-target="network">Copy</button>
+            <h2>Readable Date</h2>
+            <button class="copy-btn" data-copy-target="readable">Copy</button>
           </div>
-          <div class="result-value" data-result="network">—</div>
+          <pre class="result-pre" data-result="readable">—</pre>
         </article>
         <article class="result-card">
           <div class="result-header">
-            <h2>Broadcast Address</h2>
-            <button class="copy-btn" data-copy-target="broadcast">Copy</button>
+            <h2>ISO 8601</h2>
+            <button class="copy-btn" data-copy-target="iso">Copy</button>
           </div>
-          <div class="result-value" data-result="broadcast">—</div>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Usable Host Range</h2>
-            <button class="copy-btn" data-copy-target="range">Copy</button>
-          </div>
-          <div class="result-value" data-result="range">—</div>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Usable Hosts</h2>
-            <button class="copy-btn" data-copy-target="hosts">Copy</button>
-          </div>
-          <div class="result-value" data-result="hosts">—</div>
+          <pre class="result-pre" data-result="iso">—</pre>
         </article>
       </section>
 
@@ -114,29 +112,25 @@
 
       <section class="content-slab">
         <article class="content-block">
-          <h2>What is a subnet calculator?</h2>
+          <h2>What is a Unix timestamp?</h2>
           <p>
-            A subnet calculator takes an IP address and a CIDR prefix length,
-            then computes the network address, broadcast address, usable host
-            range, and the number of usable hosts in that subnet.
+            A Unix timestamp is the number of seconds that have passed since
+            January 1, 1970 (UTC). It is widely used in APIs, logs, and systems.
           </p>
         </article>
         <article class="content-block">
           <h2>How it works</h2>
           <p>
-            The CIDR prefix defines how many bits are allocated to the network.
-            ToolHub calculates the subnet mask, applies it to the IP, and then
-            derives the broadcast address and host range from the remaining
-            host bits.
+            ToolHub converts timestamps to readable dates in your chosen
+            timezone. You can also enter a date to get the corresponding
+            timestamp instantly.
           </p>
         </article>
         <article class="content-block">
           <h2>Example</h2>
           <p>
-            For <strong>192.168.1.10/24</strong>, the network is
-            <strong>192.168.1.0</strong>, the broadcast is
-            <strong>192.168.1.255</strong>, and the usable range is
-            <strong>192.168.1.1–192.168.1.254</strong>.
+            Timestamp <strong>1711640000</strong> converts to a readable date
+            like <strong>2024-03-28</strong> in your selected timezone.
           </p>
         </article>
       </section>
@@ -164,6 +158,6 @@
     </footer>
 
     <script src="/js/common.js" defer></script>
-    <script src="/js/subnet.js" defer></script>
+    <script src="/js/timestamp.js" defer></script>
   </body>
 </html>

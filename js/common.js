@@ -2,6 +2,11 @@ const toolRoutes = [
   { name: "Subnet Calculator", path: "/tools/subnet.html", keywords: ["subnet", "cidr", "network"] },
   { name: "JSON Formatter", path: "/tools/json.html", keywords: ["json", "formatter", "validator"] },
   { name: "Base64 Encoder / Decoder", path: "/tools/base64.html", keywords: ["base64", "encode", "decode"] },
+  { name: "Password Generator", path: "/tools/password.html", keywords: ["password", "strength", "generator"] },
+  { name: "Hash Generator", path: "/tools/hash.html", keywords: ["hash", "md5", "sha-1", "sha-256"] },
+  { name: "URL Encoder / Decoder", path: "/tools/url.html", keywords: ["url", "encode", "decode"] },
+  { name: "Timestamp Converter", path: "/tools/timestamp.html", keywords: ["timestamp", "unix", "date", "time"] },
+  { name: "UUID Generator", path: "/tools/uuid.html", keywords: ["uuid", "guid", "v4"] },
 ];
 
 const normalize = (value) => value.toLowerCase().trim();

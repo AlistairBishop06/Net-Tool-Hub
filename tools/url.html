@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Subnet Calculator — ToolHub</title>
+    <title>URL Encoder / Decoder — ToolHub</title>
     <meta
       name="description"
-      content="Subnet Calculator: instantly compute network address, broadcast, usable hosts, and IP range from an IP and CIDR. Fast, client-side, SEO-optimised."
+      content="URL Encoder / Decoder: encode or decode URLs instantly in your browser. Fast, client-side, SEO-optimised."
     />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -15,12 +15,12 @@
       <div class="container header-inner">
         <a class="logo" href="/">ToolHub</a>
         <nav class="nav">
-          <a class="active" href="/tools/subnet.html">Subnet Calculator</a>
+          <a href="/tools/subnet.html">Subnet Calculator</a>
           <a href="/tools/json.html">JSON Formatter</a>
           <a href="/tools/base64.html">Base64</a>
           <a href="/tools/password.html">Password Generator</a>
           <a href="/tools/hash.html">Hash Generator</a>
-          <a href="/tools/url.html">URL Encoder</a>
+          <a class="active" href="/tools/url.html">URL Encoder</a>
           <a href="/tools/timestamp.html">Timestamp</a>
           <a href="/tools/uuid.html">UUID Generator</a>
         </nav>
@@ -51,9 +51,9 @@
     <main class="container">
       <section class="tool-hero">
         <div>
-          <h1>Subnet Calculator</h1>
+          <h1>URL Encoder / Decoder</h1>
           <p class="lead">
-            Convert an IP address and CIDR into network details instantly.
+            Encode or decode URLs and see the differences instantly.
           </p>
         </div>
         <aside class="ad ad-banner" aria-label="Advertisement">
@@ -65,12 +65,15 @@
       <section class="tool-panel">
         <div class="input-grid">
           <div class="input-group">
-            <label for="ip-input">IP address</label>
-            <input id="ip-input" type="text" placeholder="e.g. 192.168.1.10" />
+            <label for="url-input">Input</label>
+            <textarea id="url-input" rows="6" placeholder="Enter URL..."></textarea>
           </div>
           <div class="input-group">
-            <label for="cidr-input">CIDR</label>
-            <input id="cidr-input" type="number" min="0" max="32" placeholder="e.g. 24" />
+            <label for="url-mode">Mode</label>
+            <select id="url-mode">
+              <option value="encode">Encode URL</option>
+              <option value="decode">Decode URL</option>
+            </select>
           </div>
         </div>
         <div class="validation" data-validation></div>
@@ -79,31 +82,17 @@
       <section class="tool-results">
         <article class="result-card">
           <div class="result-header">
-            <h2>Network Address</h2>
-            <button class="copy-btn" data-copy-target="network">Copy</button>
+            <h2>Result</h2>
+            <button class="copy-btn" data-copy-target="result">Copy</button>
           </div>
-          <div class="result-value" data-result="network">—</div>
+          <pre class="result-pre" data-result="result">—</pre>
         </article>
         <article class="result-card">
           <div class="result-header">
-            <h2>Broadcast Address</h2>
-            <button class="copy-btn" data-copy-target="broadcast">Copy</button>
+            <h2>Difference Preview</h2>
+            <button class="copy-btn" data-copy-target="diff">Copy</button>
           </div>
-          <div class="result-value" data-result="broadcast">—</div>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Usable Host Range</h2>
-            <button class="copy-btn" data-copy-target="range">Copy</button>
-          </div>
-          <div class="result-value" data-result="range">—</div>
-        </article>
-        <article class="result-card">
-          <div class="result-header">
-            <h2>Usable Hosts</h2>
-            <button class="copy-btn" data-copy-target="hosts">Copy</button>
-          </div>
-          <div class="result-value" data-result="hosts">—</div>
+          <pre class="result-pre" data-result="diff">—</pre>
         </article>
       </section>
 
@@ -114,29 +103,25 @@
 
       <section class="content-slab">
         <article class="content-block">
-          <h2>What is a subnet calculator?</h2>
+          <h2>What is URL encoding?</h2>
           <p>
-            A subnet calculator takes an IP address and a CIDR prefix length,
-            then computes the network address, broadcast address, usable host
-            range, and the number of usable hosts in that subnet.
+            URL encoding replaces special characters with safe equivalents so
+            they can be transmitted in query strings or links without breaking
+            the URL.
           </p>
         </article>
         <article class="content-block">
           <h2>How it works</h2>
           <p>
-            The CIDR prefix defines how many bits are allocated to the network.
-            ToolHub calculates the subnet mask, applies it to the IP, and then
-            derives the broadcast address and host range from the remaining
-            host bits.
+            ToolHub uses built-in browser encoding to transform URLs. You can
+            instantly switch between encoded and decoded forms.
           </p>
         </article>
         <article class="content-block">
           <h2>Example</h2>
           <p>
-            For <strong>192.168.1.10/24</strong>, the network is
-            <strong>192.168.1.0</strong>, the broadcast is
-            <strong>192.168.1.255</strong>, and the usable range is
-            <strong>192.168.1.1–192.168.1.254</strong>.
+            Text <strong>hello world</strong> becomes
+            <strong>hello%20world</strong> when encoded.
           </p>
         </article>
       </section>
@@ -164,6 +149,6 @@
     </footer>
 
     <script src="/js/common.js" defer></script>
-    <script src="/js/subnet.js" defer></script>
+    <script src="/js/url.js" defer></script>
   </body>
 </html>
